@@ -32,7 +32,37 @@ Até o momento, foram realizadas as seguintes etapas:
 5. **Conversão de tipos de dados** para garantir consistência (ex: `draft_round`, `draft_pick`, `years_exp`, `age`).  
 6. **Separação das bases** entre **ofensiva** e **defensiva** para análises futuras independentes.  
 
-```python
-# Exemplo: filtrando colunas existentes
-offense_cols = [col for col in offensive_cols if col in df_offense.columns]
-df_offense_reduzido = df_offense[offense_cols]
+## 🎯 Objetivo da Análise
+O objetivo deste projeto é:
+
+- Explorar o desempenho histórico de jogadores ofensivos e defensivos da NFL.  
+- Avaliar a evolução de métricas-chave como:  
+  - **QBs:** passer rating, completions, touchdowns e interceptações.  
+  - **Running backs e WRs:** jardas corridas, recepções, touchdowns e eficiência.  
+  - **Defesas:** tackles, sacks, interceptações e pontos defensivos.  
+- Criar indicadores comparativos entre jogadores e posições.  
+- Desenvolver análises e visualizações para **identificar padrões e tendências** ao longo das temporadas.  
+- Futuramente, criar modelos de **predição de performance** e pontuação de fantasy football.
+
+---
+
+## 📈 Próximos Passos
+- Realizar **Análise Exploratória de Dados (EDA)** para identificar padrões e outliers.  
+- Criar visualizações interativas de performance por posição e temporada.  
+- Construir métricas agregadas de comparação entre jogadores.  
+- Desenvolver modelos de **predição de performance** e **fantasy points**.  
+- Criar um **dashboard interativo** com `Plotly` ou `Streamlit`.  
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+- **Linguagem:** Python  
+- **Bibliotecas principais:** pandas, numpy, nfl_data_py, matplotlib, seaborn  
+- **Fonte de dados:** Kaggle + nfl_data_py  
+
+---
+
+
+
+
+
