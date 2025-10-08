@@ -37,7 +37,8 @@ Cientista de Dados em formação | Apaixonado por futebol americano 🏈
 📧 Contato: sotero.kka@gmail.com  
 🌐 [LinkedIn](https://www.linkedin.com/in/carlos-sotero/)
 
-
+![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![Status](https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow)
 
 
 
