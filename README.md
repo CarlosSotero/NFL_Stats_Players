@@ -5,7 +5,7 @@ Este projeto tem como objetivo explorar o desempenho histórico de jogadores **o
 
 A base utilizada — [NFL Stats 1999–2022](https://www.kaggle.com/datasets/philiphyde1/nfl-stats-1999-2022) — contém estatísticas atualizadas até **2024**, abrangendo **jogadores, times, métricas avançadas** e **pontos de fantasy football**.
 
-Os dados foram obtidos via **KaggleHub** e combinados com informações mais recentes do pacote `nfl_data_py`, garantindo consistência e cobertura completa das últimas temporadas (2023–2024).
+Os dados foram obtidos via **KaggleHub**.
 
 ---
 
@@ -40,12 +40,13 @@ Etapas aplicadas:
 Criação de novas métricas para enriquecer as análises:
 
 ### 🟦 Ofensivo
-- **total_yards:** jardas aéreas + jardas terrestres  
-- **total_touchdowns:** touchdowns de passe + de corrida  
-- **yards_per_pass_attempt:** jardas médias por tentativa de passe  
-- **yards_per_carry:** jardas médias por tentativa de corrida  
-- **yards_per_reception:** jardas médias por recepção  
-- **catch_rate:** taxa de recepções por target  
+- **total_touchdowns:** touchdowns de passe + de corrida
+- **yards_per_pass_attempt:** jardas médias por tentativa de passe
+- **yards_per_carry:** jardas médias por tentativa de corrida
+- **yards_per_reception:** jardas médias por recepção
+- **catch_rate:** taxa de recepções por target
+- **touches:** corridas + recepções
+- **yards_per_touch:** jardas aéreas + jardas terrestres    
 
 ### 🟥 Defensivo
 - **tackles_total:** tackles solo + assistidos  
@@ -63,6 +64,9 @@ Essas variáveis foram criadas para permitir **análises comparativas** entre po
 
 ### ✅ **Ataque – Concluído**
 Foram realizadas análises sobre o desempenho de jogadores ofensivos, explorando:
+- Distribuição dos jogadores por posição
+- Números de registro por temporada
+- Distribuição dos pontos fantasy
 - Tendências históricas de jardas, touchdowns e eficiência por posição;   
 - Identificação de outliers e jogadores de alta performance;  
 - Correlação entre volume de jogo e eficiência (yards per attempt, catch rate etc.);  
@@ -92,7 +96,7 @@ Etapas planejadas:
 ## 🛠️ Tecnologias Utilizadas
 
 - **Linguagem:** Python  
-- **Bibliotecas:** pandas, numpy, nfl_data_py, matplotlib
+- **Bibliotecas:** pandas, numpy, matplotlib
 - **Fonte de dados:** Kaggle
 - **Ambiente:** Google Colab  
 
