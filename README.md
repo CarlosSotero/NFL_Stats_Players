@@ -49,10 +49,7 @@ Criação de novas métricas para enriquecer as análises:
 - **yards_per_touch:** jardas aéreas + jardas terrestres    
 
 ### 🟥 Defensivo
-- **tackles_total:** tackles solo + assistidos  
-- **sack_rate:** taxa de sacks por snap  
-- **int_rate:** taxa de interceptações por snap  
-- **ff_rate:** taxa de fumbles forçados por snap  
+- **tackles_total:** tackles solo + assistidos   
 - **tackles_per_game:** tackles por jogo  
 - **impact_plays:** jogadas de impacto (sack + INT + fumble + safety + TD)  
 
@@ -74,7 +71,7 @@ Foram realizadas análises sobre o desempenho de jogadores ofensivos, explorando
 
 ---
 
-### 🏗️ **Defesa – Em andamento**
+### ✅ **Defesa – Concluído**
 Etapas planejadas:
 - Análise de distribuição de tackles, sacks e interceptações por posição;  
 - Avaliação da evolução das defesas ao longo das temporadas;  
@@ -84,8 +81,6 @@ Etapas planejadas:
 ---
 
 ## 📈 Próximos Passos
-
-- Finalizar **EDA da defesa**;  
 - Realizar **análises comparativas entre ataque e defesa**;  
 - Calcular correlações com métricas de pontuação fantasy;  
 - Desenvolver **modelos preditivos de performance**;  
