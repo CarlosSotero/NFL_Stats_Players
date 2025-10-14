@@ -1,106 +1,76 @@
-# 🏈 Projeto: Análise de Dados da NFL (2012–2024)
+# 🏈 Projeto: NFL com Dados — Análise e Clusterização de Jogadores (2012–2024)
 
 ## 📘 Sobre o Projeto
-Este projeto tem como objetivo explorar o desempenho histórico de jogadores **ofensivos e defensivos da NFL** entre as temporadas **2012 e 2024**, utilizando dados consolidados do Kaggle.
+Este projeto tem como objetivo explorar e agrupar o desempenho histórico de jogadores **ofensivos e defensivos da NFL** entre as temporadas **2012 e 2024**, utilizando dados consolidados do Kaggle.
 
-A base utilizada — [NFL Stats 1999–2022](https://www.kaggle.com/datasets/philiphyde1/nfl-stats-1999-2022) — contém estatísticas atualizadas até **2024**, abrangendo **jogadores, times, métricas avançadas** e **pontos de fantasy football**.
-
-Os dados foram obtidos via **KaggleHub**.
+A base utilizada — [NFL Stats 1999–2022](https://www.kaggle.com/datasets/philiphyde1/nfl-stats-1999-2022) — contém estatísticas atualizadas até 2024, abrangendo jogadores, times, métricas avançadas e pontos de fantasy football.
 
 ---
 
-## 🎯 Objetivos
+## 🎯 Objetivos da Análise
 
 - Explorar o desempenho histórico de jogadores ofensivos e defensivos;  
-- Avaliar a evolução de métricas como:
-  - **QBs:** passer rating, completions, touchdowns e interceptações;  
+- Avaliar a evolução de métricas como:  
+  - **QBs:** passer rating, jardas aéreas, touchdowns e interceptações;  
   - **RBs e WRs:** jardas corridas, recepções, touchdowns e eficiência;  
-  - **Defesas:** tackles, sacks, interceptações e pontos defensivos;  
+  - **Defesas:** tackles, sacks, interceptações e jogadas impactantes;  
 - Criar **indicadores comparativos** entre jogadores e posições;  
-- Desenvolver **análises e visualizações** para identificar padrões e tendências ao longo das temporadas;  
-- Futuramente, criar **modelos de predição de performance e pontuação fantasy**.
+- Aplicar **técnicas de clusterização (K-Means, PCA)** para identificar grupos de jogadores com estilos e desempenhos semelhantes;  
+- Visualizar os clusters em gráficos 2D/3D e interpretar **perfis de performance**.
 
 ---
 
-## 🧹 Limpeza e Padronização
+## 🤖 Etapas do Projeto
 
-Etapas aplicadas:
+### 1. Coleta e Entendimento dos Dados
+- Fonte: Kaggle (NFL Stats 2012–2024)  
+- Dados ofensivos e defensivos consolidados em dataframes distintos.  
+- Ampla variedade de métricas (yardas, touchdowns, interceptações, tackles, snaps, etc.)
 
-1. Remoção de colunas irrelevantes e redundantes;  
-2. Substituição de valores nulos por `"Desconhecido"` em campos categóricos;  
-3. Correção de inconsistências (`college = 0` → `"Desconhecido"`);  
-4. Conversão de colunas numéricas para tipo `int`;  
-5. Exclusão de registros sem posição ou nome de jogador;  
-6. Salvamento dos datasets limpos para etapas analíticas posteriores.
+### 2. Limpeza e Padronização
+- Remoção de colunas irrelevantes e redundantes;  
+- Substituição de valores nulos e inconsistentes (`college = 0 → "Desconhecido"`);  
+- Conversão de colunas numéricas e categóricas para tipos adequados;  
+- Filtragem de registros inconsistentes (ex: jogadores sem snaps defensivos).
 
----
+### 3. Feature Engineering
+Criação de novas variáveis derivadas para enriquecer as análises:
+- **Ataque:** `total_yards`, `total_touchdown`, `yards_per_carry`, `yards_per_pass_attempt`, `catch_rate`  
+- **Defesa:** `tackles_total`, `sack_rate`, `tackles_per_game`, `impact_plays`
 
-## 🧠 Feature Engineering
+### 4. Análise Exploratória (EDA)
+- Visualização da evolução de touchdowns e yardas ao longo das temporadas;  
+- Comparações entre posições (médias de tackles, sacks, interceptações e jogadas impactantes);  
+- Identificação de outliers e padrões por posição.  
 
-Criação de novas métricas para enriquecer as análises:
-
-### 🟦 Ofensivo
-- **total_touchdowns:** touchdowns de passe + de corrida
-- **yards_per_pass_attempt:** jardas médias por tentativa de passe
-- **yards_per_carry:** jardas médias por tentativa de corrida
-- **yards_per_reception:** jardas médias por recepção
-- **catch_rate:** taxa de recepções por target
-- **touches:** corridas + recepções
-- **yards_per_touch:** jardas aéreas + jardas terrestres    
-
-### 🟥 Defensivo
-- **tackles_total:** tackles solo + assistidos   
-- **tackles_per_game:** tackles por jogo  
-- **impact_plays:** jogadas de impacto (sack + INT + fumble + safety + TD)  
-
-Essas variáveis foram criadas para permitir **análises comparativas** entre posições e avaliar **eficiência individual** dos atletas.
+### 5. Clusterização (em desenvolvimento)
+Fase atual do projeto:
+- Aplicar **K-Means** para agrupar jogadores com base em múltiplas métricas de performance;  
+- Reduzir dimensionalidade com **PCA** para visualização;  
+- Analisar e nomear os clusters identificados (ex: *QBs móveis*, *WRs de posse*, *defensores playmakers*).
 
 ---
 
-## 📊 Análise Exploratória (EDA)
-
-### ✅ **Ataque – Concluído**
-Foram realizadas análises sobre o desempenho de jogadores ofensivos, explorando:
-- Distribuição dos jogadores por posição
-- Números de registro por temporada
-- Distribuição dos pontos fantasy
-- Tendências históricas de jardas, touchdowns e eficiência por posição;   
-- Identificação de outliers e jogadores de alta performance;  
-- Correlação entre volume de jogo e eficiência (yards per attempt, catch rate etc.);  
-- Visualizações comparativas entre posições e temporadas.
+## 🔍 Tecnologias Utilizadas
+- **Python 3.10+**
+- **Pandas**, **NumPy**, **Matplotlib**, **Seaborn**
+- **Scikit-learn** (para K-Means, PCA e métricas de clusterização)
+- **Jupyter / Google Colab**
 
 ---
 
-### ✅ **Defesa – Concluído**
-Etapas planejadas:
-- Análise de distribuição de tackles, sacks e interceptações por posição;  
-- Avaliação da evolução das defesas ao longo das temporadas;  
-- Identificação de jogadores consistentes e “playmakers”;  
-- Visualizações de impacto defensivo por temporada e posição.
-
----
-
-## 📈 Próximos Passos
-- Realizar **análises comparativas entre ataque e defesa**;  
-- Calcular correlações com métricas de pontuação fantasy;  
-- Desenvolver **modelos preditivos de performance**;  
-- Criar um **dashboard interativo** com Streamlit ou Plotly.
-
----
-
-## 🛠️ Tecnologias Utilizadas
-
-- **Linguagem:** Python  
-- **Bibliotecas:** pandas, numpy, matplotlib
-- **Fonte de dados:** Kaggle
-- **Ambiente:** Google Colab  
+## 🧩 Próximos Passos
+- Implementar o modelo de **clusterização ofensiva e defensiva**  
+- Avaliar métricas como **Silhouette Score**  
+- Criar dashboards interativos com **Plotly** ou **Streamlit**  
+- Publicar visualizações interpretativas sobre os grupos encontrados  
 
 ---
 
 ## ✍️ Autor
 **Sotero**  
 Cientista de Dados em formação | Apaixonado por futebol americano 🏈  
-📧 Contato: sotero.kka@gmail.com  
+📧 Contato: [sotero.kka@gmail.com](mailto:sotero.kka@gmail.com)  
 🌐 [LinkedIn](https://www.linkedin.com/in/carlos-sotero/)
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
