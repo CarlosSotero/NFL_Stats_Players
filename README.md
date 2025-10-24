@@ -43,7 +43,7 @@ Criação de novas variáveis derivadas para enriquecer as análises:
 - Comparações entre posições (médias de tackles, sacks, interceptações e jogadas impactantes);  
 - Identificação de outliers e padrões por posição.  
 
-### 5. Clusterização (em desenvolvimento)
+### 5. Clusterização
 Fase atual do projeto:
 - Aplicar **K-Means** para agrupar jogadores com base em múltiplas métricas de performance;  
 - Reduzir dimensionalidade com **PCA** para visualização;  
@@ -59,9 +59,7 @@ Fase atual do projeto:
 
 ---
 
-## 🧩 Próximos Passos
-- Implementar o modelo de **clusterização ofensiva e defensiva**  
-- Avaliar métricas como **Silhouette Score**  
+## 🧩 Próximos Passos 
 - Criar dashboards interativos com **Plotly** ou **Streamlit**  
 - Publicar visualizações interpretativas sobre os grupos encontrados  
 
